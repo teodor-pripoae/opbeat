@@ -10,7 +10,7 @@ defmodule Opbeat.Mixfile do
   end
 
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :httpoison]]
   end
 
   defp deps(:development), do: deps
