@@ -23,7 +23,7 @@ defmodule Opbeat.ErrorFormatterTest do
             %{filename: "lib/ex_unit/runner.ex", function: "exec_test", lineno: 249},
             %{filename: "timer.erl", function: "tc", lineno: 165},
             %{filename: "lib/ex_unit/runner.ex", function: "-spawn_test/3-fun-1-", lineno: 199}]
-          assert Opbeat.ErrorFormatter.format_stacktrace(exception) == expected
+          assert Opbeat.ErrorFormatter.format_stacktrace(exception) == %{frames: expected}
       end
     end
   end

@@ -19,9 +19,11 @@ defmodule Opbeat.ErrorFormatter do
     end
 
     # Strip lines without file/lineno
-    Enum.reject raw_st, fn(x) ->
+    valid_st = Enum.reject raw_st, fn(x) ->
       x == nil
     end
+
+    %{frames: valid_st}
   end
 
   def get_file_and_line(file_info) do
