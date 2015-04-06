@@ -26,9 +26,6 @@ defmodule Opbeat.HostInfo do
   end
 
   def get_full_hostname do
-    {:ok, short_hostname} = :inet.gethostname
-    {:ok, {:hostent, full_hostname, _aliases, _addr_type, __length, _addr_list}} = :inet.gethostbyname(short_hostname)
-
-    full_hostname |> List.to_string
+    :net_adm.localhost |> List.to_string
   end
 end
