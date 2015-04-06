@@ -1,5 +1,5 @@
 defmodule Opbeat.Config do
-  def get_config do
-    %{org_id: "", app_id: "", app_secret: ""}
+  def auth do
+    Application.get_env(:opbeat, :auth)
   end
 end
