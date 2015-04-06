@@ -19,9 +19,10 @@ defmodule Opbeat.ErrorFormatterTest do
       rescue
         exception ->
           expected = [
-            %{filename: 'test/opbeat/error_formatter_test.exs', function: :"test format_stacktrace - returns correct values for error", lineno: 18},
-            %{filename: 'lib/ex_unit/runner.ex', function: :exec_test, lineno: 249}, %{filename: 'timer.erl', function: :tc, lineno: 165},
-            %{filename: 'lib/ex_unit/runner.ex', function: :"-spawn_test/3-fun-1-", lineno: 199}]
+            %{filename: "test/opbeat/error_formatter_test.exs", function: "test format_stacktrace - returns correct values for error", lineno: 18},
+            %{filename: "lib/ex_unit/runner.ex", function: "exec_test", lineno: 249},
+            %{filename: "timer.erl", function: "tc", lineno: 165},
+            %{filename: "lib/ex_unit/runner.ex", function: "-spawn_test/3-fun-1-", lineno: 199}]
           assert Opbeat.ErrorFormatter.format_stacktrace(exception) == expected
       end
     end

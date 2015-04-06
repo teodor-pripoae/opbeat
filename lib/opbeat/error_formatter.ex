@@ -10,8 +10,8 @@ defmodule Opbeat.ErrorFormatter do
       {filename, lineno} = get_file_and_line(file_info)
 
       if filename do
-        %{function: method, \
-          filename: filename, \
+        %{function: Atom.to_string(method), \
+          filename: List.to_string(filename), \
           lineno: lineno}
       else
         nil
