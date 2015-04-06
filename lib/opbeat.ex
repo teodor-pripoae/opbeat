@@ -1,0 +1,2 @@
+defmodule Opbeat do
+end
