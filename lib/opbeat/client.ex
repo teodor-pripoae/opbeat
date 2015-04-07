@@ -25,6 +25,10 @@ defmodule Opbeat.Client do
     HTTPoison.request(:post, url, json_data, headers)
   end
 
+  def enabled do
+    Opbeat.Config.enabled == true
+  end
+
   defp get_url(config) do
     "https://opbeat.com/api/v1/organizations/#{config.org_id}/apps/#{config.app_id}/errors/"
   end

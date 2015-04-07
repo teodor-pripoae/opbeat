@@ -6,3 +6,5 @@ config :opbeat, :auth,
   %{org_id: System.get_env("OPBEAT_ORG_ID"), \
     app_id: System.get_env("OPBEAT_APP_ID"), \
     app_secret: System.get_env("OPBEAT_APP_SECRET")}
+
+config :opbeat, :enabled, false
