@@ -40,7 +40,7 @@ end
 
 You can also pass options `misc` and `extra` as `Map`:
 
-```
+```elixir
 Opbeat.Client.report(e, %{mymisc: "Some Value"}, %{myextra: "aaaa"})
 ```
 
