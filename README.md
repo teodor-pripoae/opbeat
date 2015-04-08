@@ -43,3 +43,9 @@ You can also pass options `misc` and `extra` as `Map`:
 ```
 Opbeat.Client.report(e, %{mymisc: "Some Value"}, %{myextra: "aaaa"})
 ```
+
+##TODO
+
+- [ ] add support for http connection info
+- [ ] more tests with VCR
+- [ ] show more stacktrace information so it can be formatted properly on opbeat
