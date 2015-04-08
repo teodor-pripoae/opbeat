@@ -1,6 +1,6 @@
 defmodule Opbeat.Version do
   def version do
-    "0.1.0"
+    Mix.Project.config[:version]
   end
 
   def full_version do
