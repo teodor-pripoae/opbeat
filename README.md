@@ -47,5 +47,6 @@ Opbeat.Client.report(e, %{mymisc: "Some Value"}, %{myextra: "aaaa"})
 ##TODO
 
 - [ ] add support for http connection info
-- [ ] more tests with VCR
+- [ ] more tests with [VCR](https://github.com/parroty/exvcr)
 - [ ] show more stacktrace information so it can be formatted properly on opbeat
+- [ ] make requests with [HTTPoison.AsyncResponse](https://github.com/edgurgel/httpoison#async-requests)
