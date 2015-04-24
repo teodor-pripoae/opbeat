@@ -30,7 +30,7 @@ defmodule Opbeat.Client do
   end
 
   defp get_url(config) do
-    "https://opbeat.com/api/v1/organizations/#{config.org_id}/apps/#{config.app_id}/errors/"
+    "https://intake.opbeat.com/api/v1/organizations/#{config.org_id}/apps/#{config.app_id}/errors/"
   end
 
   defp get_default_headers(config) do
