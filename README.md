@@ -8,6 +8,10 @@ Elixir client for [Opbeat](https://opbeat.com).
 Add module to `mix.exs`
 
 ```elixir
+def application do
+  [applications: [:logger, :opbeat]]
+end
+
 def deps do
   [{:opbeat, github: "teodor-pripoae/opbeat"}]
 end
