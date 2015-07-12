@@ -16,6 +16,15 @@ defmodule Opbeat.Client do
     do_request(data)
   end
 
+  def report_http(e, plug_conn, misc \\ %{}, extra \\ %{}) do
+    data = %{message: Opbeat.ErrorFormatter.format_message(e), \
+             stacktrace: Opbeat.ErrorFormatter.format_stacktrace(e), \
+             http: Opbeat.HTTP.format_http(plug_conn), \
+             misc: Opbeat.HostInfo.misc(misc), \
+             extra: Opbeat.HostInfo.extra(extra)}
+    do_request(data)
+  end
+
   def do_request(data) do
     config = Opbeat.Config.auth
     url = get_url(config)
