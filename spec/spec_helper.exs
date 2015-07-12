@@ -3,5 +3,7 @@ if System.get_env("MIX_ENV") != "test" do
   Kernel.exit(:normal)
 end
 
-ExUnit.start
-Amrita.start
+ESpec.start
+
+ESpec.configure fn(config) ->
+end

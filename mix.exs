@@ -15,7 +15,7 @@ defmodule Opbeat.Mixfile do
 
   defp deps(:development), do: deps
   defp deps(:test) do
-    [{ :amrita, "~> 0.4", github: "josephwilk/amrita", only: :test }] ++ deps
+    [{ :espec, "~> 0.6.3"}] ++ deps
   end
   defp deps(_), do: deps
 
