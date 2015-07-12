@@ -23,7 +23,8 @@ defmodule Opbeat.ErrorFormatter do
       x == nil
     end
 
-    %{frames: valid_st}
+    # reverse stacktrace since Opbeat is expecting it in cronological order
+    %{frames: valid_st |> Enum.reverse}
   end
 
   def get_file_and_line(file_info) do
