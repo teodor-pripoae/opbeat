@@ -21,8 +21,8 @@ defmodule Opbeat.Mixfile do
 
   defp deps do
     [
-      {:httpoison, "~> 0.6.2"},
-      {:poison, "~> 1.3.1"}
+      {:httpoison, "~> 0.8.0"},
+      {:poison, "~> 1.5.0"}
     ]
   end
 end
