@@ -3,14 +3,27 @@ defmodule Opbeat.Mixfile do
 
   def project do
     [app: :opbeat,
-     version: "0.2.1",
-     elixir: "~> 1.0",
+     version: "0.3.0",
+     elixir: "~> 1.1",
      description: "Elixir client for opbeat",
+     package: package,
      deps: deps(Mix.env)]
   end
 
   def application do
     [applications: [:logger, :httpoison]]
+  end
+
+  defp package do
+    [
+     files: ["lib", "mix.exs", "README.md", "test*", "config"],
+     maintainers: ["Teodor Pripoae"],
+     deps: deps,
+     licenses: ["MIT"],
+     links: %{
+         "GitHub" => "https://github.com/teodor-pripoae/opbeat",
+     }
+    ]
   end
 
   defp deps(:development), do: deps
