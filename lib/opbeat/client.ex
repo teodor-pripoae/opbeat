@@ -29,7 +29,7 @@ defmodule Opbeat.Client do
     config = Opbeat.Config.auth
     url = get_url(config)
     headers = get_default_headers(config)
-    json_data = Poison.encode!(data, %{})
+    json_data = Poison.encode!(data)
 
     HTTPoison.request(:post, url, json_data, headers)
   end
