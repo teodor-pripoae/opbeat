@@ -4,10 +4,11 @@ defmodule Opbeat.Mixfile do
   def project do
     [app: :opbeat,
      version: "0.3.0",
-     elixir: "~> 1.1",
+     elixir: "~> 1.3.2",
      description: "Elixir client for opbeat",
      package: package,
-     deps: deps(Mix.env)]
+     preferred_cli_env: [espec: :test],
+     deps: deps]
   end
 
   def application do
@@ -26,16 +27,11 @@ defmodule Opbeat.Mixfile do
     ]
   end
 
-  defp deps(:development), do: deps
-  defp deps(:test) do
-    [{ :espec, "~> 0.6.3"}] ++ deps
-  end
-  defp deps(_), do: deps
-
   defp deps do
     [
-      {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 1.5.0"}
+      {:espec, "~> 1.1.0", only: :test},
+      {:httpoison, "~> 0.9.1"},
+      {:poison, "~> 2.2.0"}
     ]
   end
 end
