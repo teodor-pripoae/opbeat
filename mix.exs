@@ -17,7 +17,7 @@ defmodule Opbeat.Mixfile do
 
   defp package do
     [
-     files: ["lib", "mix.exs", "README.md", "test*", "config"],
+     files: ["lib", "mix.exs", "README.md", "spec*", "config"],
      maintainers: ["Teodor Pripoae"],
      deps: deps,
      licenses: ["MIT"],
