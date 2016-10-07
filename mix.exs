@@ -3,7 +3,7 @@ defmodule Opbeat.Mixfile do
 
   def project do
     [app: :opbeat,
-     version: "0.3.0",
+     version: "0.4.0",
      elixir: "~> 1.3.2",
      description: "Elixir client for opbeat",
      package: package,
