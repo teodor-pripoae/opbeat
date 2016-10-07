@@ -31,7 +31,8 @@ defmodule Opbeat.Mixfile do
     [
       {:espec, "~> 1.1.0", only: :test},
       {:httpoison, "~> 0.9.1"},
-      {:poison, "~> 2.2.0"}
+      {:poison, "~> 2.2.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 end
