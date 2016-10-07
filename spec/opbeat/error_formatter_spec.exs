@@ -7,7 +7,7 @@ defmodule Opbeat.ErrorFormatterTest do
         MissingMethod.crash
       rescue
         exception ->
-          expect(Opbeat.ErrorFormatter.format_message(exception)).to eql("undefined function: MissingMethod.crash/0 (module MissingMethod is not available)")
+          expect(Opbeat.ErrorFormatter.format_message(exception)).to eql("function MissingMethod.crash/0 is undefined (module MissingMethod is not available)")
       end
     end
   end
@@ -25,13 +25,12 @@ defmodule Opbeat.ErrorFormatterTest do
           expect(frames).to_not eql(nil)
           expect(length(frames)).to eql(7)
 
-          expect(Enum.at(frames, 0)).to eql(%{filename: "lib/espec/runner.ex", function: "do_run", lineno: 30})
-          expect(Enum.at(frames, 1)).to eql(%{filename: "lib/espec/runner.ex", function: "run_examples", lineno: 57})
-          expect(Enum.at(frames, 2)).to eql(%{filename: "lib/enum.ex", function: "map", lineno: 977})
-          expect(Enum.at(frames, 3)).to eql(%{filename: "lib/enum.ex", function: "-reduce/3-lists^foldl/2-0-", lineno: 1261})
-          expect(Enum.at(frames, 4)).to eql(%{filename: "lib/enum.ex", function: "-map/2-fun-0-", lineno: 977})
-          expect(Enum.at(frames, 5)).to eql(%{filename: "lib/espec/example_runner.ex", function: "run_example", lineno: 30})
-          expect(Enum.at(frames, 6)).to eql(%{filename: "spec/opbeat/error_formatter_spec.exs", function: "example_returns_correct_values_for_error_ouetfgjvysqwpzrahxicbnmdlk", lineno: 18})
+          expect(Enum.at(frames, 0)).to eql(%{filename: "lib/espec/runner.ex", function: "do_run", lineno: 51})
+          expect(Enum.at(frames, 1)).to eql(%{filename: "lib/espec/runner.ex", function: "run_examples", lineno: 81})
+          expect(Enum.at(frames, 2)).to eql(%{filename: "lib/enum.ex", function: "-map/2-lists^map/1-0-", lineno: 1184})
+          expect(Enum.at(frames, 3)).to eql(%{filename: "lib/enum.ex", function: "-map/2-lists^map/1-0-", lineno: 1184})
+          expect(Enum.at(frames, 4)).to eql(%{filename: "lib/espec/example_runner.ex", function: "run_example", lineno: 39})
+          expect(Enum.at(frames, 5)).to eql(%{filename: "lib/espec/example_runner.ex", function: "try_run", lineno: 67})
           # expected = [
           #   %{filename: "test/opbeat/error_formatter_spec.exs", function: "test format_stacktrace - returns correct values for error", lineno: 18},
           #   %{filename: "lib/ex_unit/runner.ex", function: "exec_test", lineno: 249},

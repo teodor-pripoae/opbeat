@@ -8,8 +8,8 @@ defmodule Opbeat.HostInfoTest do
   end
 
   describe "get_erlang_version" do
-    it "should return 17" do
-      expect(Opbeat.HostInfo.get_erlang_version).to eql("17")
+    it "should return 19" do
+      expect(Opbeat.HostInfo.get_erlang_version).to eql("19")
     end
   end
 
@@ -17,12 +17,12 @@ defmodule Opbeat.HostInfoTest do
     it "should return elixir/erlang" do
       extra = Opbeat.HostInfo.extra
 
-      expect(extra).to eql(%{erlang: "17", elixir: System.version})
+      expect(extra).to eql(%{erlang: "19", elixir: System.version})
     end
 
     it "should return merged args" do
       extra = Opbeat.HostInfo.extra(%{"My-Setting": "123"})
-      expect(extra).to eql(%{erlang: "17", elixir: System.version, "My-Setting": "123"})
+      expect(extra).to eql(%{erlang: "19", elixir: System.version, "My-Setting": "123"})
     end
   end
 
