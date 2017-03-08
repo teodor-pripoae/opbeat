@@ -25,8 +25,8 @@ defmodule Opbeat.ErrorFormatterTest do
           expect(frames).to_not eql(nil)
           expect(length(frames)).to eql(7)
 
-          expect(Enum.at(frames, 0)).to eql(%{filename: "lib/espec/runner.ex", function: "do_run", lineno: 51})
-          expect(Enum.at(frames, 1)).to eql(%{filename: "lib/espec/runner.ex", function: "run_examples", lineno: 81})
+          expect(Enum.at(frames, 0)).to eql(%{filename: "lib/espec/suite_runner.ex", function: "run", lineno: 18})
+          expect(Enum.at(frames, 1)).to eql(%{filename: "lib/espec/suite_runner.ex", function: "run_examples", lineno: 39})
           expect(Enum.at(frames, 2)).to eql(%{filename: "lib/enum.ex", function: "-map/2-lists^map/1-0-", lineno: 1184})
           expect(Enum.at(frames, 3)).to eql(%{filename: "lib/enum.ex", function: "-map/2-lists^map/1-0-", lineno: 1184})
           expect(Enum.at(frames, 4)).to eql(%{filename: "lib/espec/example_runner.ex", function: "run_example", lineno: 39})

@@ -3,7 +3,7 @@ defmodule Opbeat.ErrorFormatter do
     Exception.message(e)
   end
 
-  def format_stacktrace(e) do
+  def format_stacktrace(_e) do
     raw_st = Enum.map System.stacktrace, fn(line) ->
       {_module, method, _index, file_info} = line
 

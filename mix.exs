@@ -3,7 +3,7 @@ defmodule Opbeat.Mixfile do
 
   def project do
     [app: :opbeat,
-     version: "0.4.0",
+     version: "0.4.1",
      elixir: "~> 1.3.2",
      description: "Elixir client for opbeat",
      package: package,
@@ -29,9 +29,9 @@ defmodule Opbeat.Mixfile do
 
   defp deps do
     [
-      {:espec, "~> 1.1.0", only: :test},
-      {:httpoison, "~> 0.9.1"},
-      {:poison, "~> 2.2.0"},
+      {:espec, "~> 1.3.2", only: :test},
+      {:httpoison, "~> 0.11.1"},
+      {:poison, "~> 3.1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end

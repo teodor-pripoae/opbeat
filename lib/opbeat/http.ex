@@ -15,11 +15,13 @@ defmodule Opbeat.HTTP do
 
   def format_url(plug_conn) do
     scheme = plug_conn.scheme
-    if plug_conn.port == 80 do
-      host = plug_conn.host
-    else
-      host = "#{plug_conn.host}:#{plug_conn.port}"
-    end
+
+    host =
+      if plug_conn.port == 80 do
+        plug_conn.host
+      else
+        "#{plug_conn.host}:#{plug_conn.port}"
+      end
 
     path = plug_conn.path_info |> Enum.join("/")
 
@@ -48,7 +50,7 @@ defmodule Opbeat.HTTP do
 
   def format_remote_host(plug_conn) do
     case plug_conn.peer do
-      {host, port} ->
+      {host, _} ->
         host |> Tuple.to_list |> Enum.join(".")
       _ ->
         ""
