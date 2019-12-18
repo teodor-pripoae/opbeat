@@ -3,7 +3,7 @@ Opbeat
 
 Elixir client for [Opbeat](https://opbeat.com).
 
-##Installation
+## Installation
 
 Add module to `mix.exs`
 
@@ -32,7 +32,7 @@ By default Opbeat logging is disabled. You must enabled it for `production.exs` 
 config :opbeat, :enabled, true
 ```
 
-##Usage
+## Usage
 
 To report and error:
 
@@ -48,7 +48,7 @@ You can also pass options `misc` and `extra` as `Map`:
 Opbeat.Client.report(e, %{mymisc: "Some Value"}, %{myextra: "aaaa"})
 ```
 
-##TODO
+## TODO
 
 - [ ] add support for http connection info
 - [ ] more tests with [VCR](https://github.com/parroty/exvcr)
